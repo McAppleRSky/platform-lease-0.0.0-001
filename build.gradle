@@ -1,0 +1,48 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.7.18'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+}
+
+//description = ""
+group = 'ru.khtu.platform'
+version = '0.0.0-001'
+
+//java {sourceCompatibility = JavaVersion.VERSION_1_8}
+compileJava   {
+	options.encoding = "UTF-8"
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+}
+compileTestJava.options.encoding = 'UTF-8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly "org.projectlombok:lombok:1.18.36"
+	compileOnly "org.mapstruct:mapstruct:1.6.3"
+	annotationProcessor 'org.projectlombok:lombok:1.18.38',
+			'org.mapstruct:mapstruct-processor:1.6.3',
+			'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+//	compileOnly 'com.google.code.findbugs:jsr305:3.0.2' // notNull
+	compileOnly "org.jetbrains:annotations:21.0.1"
+	implementation "org.apache.commons:commons-lang3:3.17.0"
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation files('lib/h2-2.2.224.jar')
+//	implementation "org.postgresql:postgresql"
+	implementation "org.flywaydb:flyway-core:9.22.3"
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	testImplementation'org.springframework.boot:spring-boot-starter-test'
+}
+
+//tasks.named('test') {useJUnitPlatform()}
+test {
+	useJUnitPlatform()
+	systemProperty "random.testing.seed", new Random().nextInt()
+}
