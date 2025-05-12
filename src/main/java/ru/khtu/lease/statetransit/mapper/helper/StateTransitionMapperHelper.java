@@ -9,24 +9,27 @@ import java.util.List;
 public class StateTransitionMapperHelper// extends MapperDto<StateTransitionEntity, StateTransitionHelper>
 {
 
-    public static List<StateTransitionFullDto> toFullDto(List<StateTransitionEntity> entities) {
+    public static StateTransitionFullDto toDto(StateTransitionEntity entity) {
+        return new StateTransitionFullDto(
+                entity.getId(),
+                entity.getWoName(),
+                entity.getActionName(),
+                entity.getActionLabel(),
+                entity.getCurrentState(),
+                entity.getNextState(),
+                entity.getCustomUrl(),
+                entity.getClassName(),
+                entity.getMethodName(),
+                entity.getDefaultDisplay(),
+                entity.getReadOnly(),
+                entity.getCloseWindow(),
+                entity.getSecondaryAction() );
+    }
+
+    public static List<StateTransitionFullDto> toFullDtos(List<StateTransitionEntity> entities) {
         List<StateTransitionFullDto> result = new ArrayList<>();
         for (StateTransitionEntity entity : entities) {
-            result.add(
-                    new StateTransitionFullDto(
-                            entity.getId(),
-                            entity.getWoName(),
-                            entity.getActionName(),
-                            entity.getActionLabel(),
-                            entity.getCurrentState(),
-                            entity.getNextState(),
-                            entity.getCustomUrl(),
-                            entity.getClassName(),
-                            entity.getMethodName(),
-                            entity.getDefaultDisplay(),
-                            entity.getReadOnly(),
-                            entity.getCloseWindow(),
-                            entity.getSecondaryAction() ) );
+            result.add( toDto(entity) );
         }
         return result;
     }

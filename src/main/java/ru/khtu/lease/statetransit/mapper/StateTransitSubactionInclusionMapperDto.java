@@ -1,6 +1,7 @@
 package ru.khtu.lease.statetransit.mapper;
 
 import org.mapstruct.Mapper;
+import ru.khtu.lease.statetransit.util.mapper.mapstruct.MapperDto;
 import ru.khtu.lease.statetransit.data.dto.StateTransitionSubactionInclusionDto;
 import ru.khtu.lease.statetransit.data.entity.StateTransitionSubactionInclusionEntity;
 

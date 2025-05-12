@@ -1,6 +1,6 @@
 package ru.khtu.lease.statetransit.service;
 
-import ru.khtu.lease.statetransit.data.enums.WorkObject;
+import ru.khtu.lease.common.data.enums.WorkObject;
 
 import java.util.Map;
 

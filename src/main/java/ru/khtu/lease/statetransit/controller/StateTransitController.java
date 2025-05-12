@@ -5,18 +5,20 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.khtu.lease.common.ControllerConstant;
+import ru.khtu.lease.common.controller.RestConstant;
+import ru.khtu.lease.common.data.enums.WorkObject;
 import ru.khtu.lease.statetransit.data.enums.Catalog;
-import ru.khtu.lease.statetransit.data.enums.WorkObject;
 import ru.khtu.lease.statetransit.service.StateTransitService;
 
 import java.util.*;
 
 @RequiredArgsConstructor
 @RestController
-public class StateTransitController implements ControllerConstant {
+public class StateTransitController implements RestConstant {
 
     private final StateTransitService stateTransitService;
+
+    private String PATH_KEY_CATALOG = new String("catalog");
 
     @RequestMapping(value = "/api/0.0.1/catalog", method = RequestMethod.GET)
     @ResponseBody
@@ -34,8 +36,6 @@ public class StateTransitController implements ControllerConstant {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
-    private String PATH_KEY_CATALOG = new String("catalog");
 
     @RequestMapping(value = "/api/0.0.1/work-object/{catalog}", method = RequestMethod.GET)
     @ResponseBody
@@ -69,13 +69,13 @@ public class StateTransitController implements ControllerConstant {
     @ResponseBody
     public ResponseEntity<Map<String, Object>> getStateTransition(@PathVariable Map<String, String> woName) {
         Map<String, Object> result = null;
-        switch (WorkObject.get(woName.get(PATH_KEY_WO_NAME))) {
+        switch (WorkObject.get(woName.get(KEY_WO_NAME))) {
             case CLASSIFICATION:
-                throw new NotImplementedException(PATH_KEY_WO_NAME + " - " + WorkObject.CLASSIFICATION.getString());
-            case W_SPACE:
-                throw new NotImplementedException(PATH_KEY_WO_NAME + " - " + WorkObject.W_SPACE.getString());
-            case W_PEOPLE:
-                result = stateTransitService.getStateTransition(WorkObject.W_PEOPLE);
+                throw new NotImplementedException(KEY_WO_NAME + " - " + WorkObject.CLASSIFICATION.getString());
+            case WO_SPACE:
+                throw new NotImplementedException(KEY_WO_NAME + " - " + WorkObject.WO_SPACE.getString());
+            case WO_PEOPLE:
+                result = stateTransitService.getStateTransition(WorkObject.WO_PEOPLE);
                 break;
         }
         if (result != null) {

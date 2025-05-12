@@ -2,8 +2,8 @@ package ru.khtu.lease.statetransit.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.khtu.lease.common.data.enums.WorkObject;
 import ru.khtu.lease.statetransit.component.StateTransitComponent;
-import ru.khtu.lease.statetransit.data.enums.WorkObject;
 import ru.khtu.lease.statetransit.mapper.helper.StateTransitionMapperHelperDto;
 import ru.khtu.lease.statetransit.mapper.helper.StateTransitionSubactionMapperHelperDto;
 import ru.khtu.lease.statetransit.service.json.StateTransitionResponseJsonBuilderImpl;

@@ -1,21 +1,24 @@
 package ru.khtu.lease.statetransit.service.json;
 
-import ru.khtu.lease.statetransit.component.StateTransitComponent;
-import ru.khtu.lease.statetransit.data.enums.ResponseKey;
-import ru.khtu.lease.statetransit.data.enums.WorkObject;
 import ru.khtu.lease.common.data.dto.StateDto;
+import ru.khtu.lease.common.data.enums.WorkObject;
+import ru.khtu.lease.statetransit.component.StateTransitComponent;
 import ru.khtu.lease.statetransit.data.dto.StateTransitionFullDto;
 import ru.khtu.lease.statetransit.data.dto.StateTransitionSubactionFullDto;
+import ru.khtu.lease.statetransit.data.enums.ResponseKey;
 import ru.khtu.lease.statetransit.mapper.AttributeMapper;
 import ru.khtu.lease.statetransit.mapper.InclusionMapper;
 import ru.khtu.lease.statetransit.mapper.ModuleFormMapper;
 import ru.khtu.lease.statetransit.mapper.StateMapperDto;
-import ru.khtu.lease.statetransit.mapper.helper.jackson.StateTransitionJacksonMapperHelperDto;
 import ru.khtu.lease.statetransit.mapper.helper.StateTransitionMapperHelperDto;
-import ru.khtu.lease.statetransit.mapper.helper.jackson.StateTransitionSubactionJacksonMapperHelperDto;
 import ru.khtu.lease.statetransit.mapper.helper.StateTransitionSubactionMapperHelperDto;
+import ru.khtu.lease.statetransit.mapper.helper.jackson.StateTransitionJacksonMapperHelperDto;
+import ru.khtu.lease.statetransit.mapper.helper.jackson.StateTransitionSubactionJacksonMapperHelperDto;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 
 public class StateTransitionResponseJsonBuilderImpl
         extends StateTransitionResponseJsonBuilderAbstract implements StateTransitionResponseJsonBuilder {
