@@ -25,6 +25,7 @@ public class SecurityConfig {
 
     @Value("${config.admin.pass}") private String userpass;
 
+    @Value("${config.admin.pass.testseq}") private String testSeq;
 //    @Value("${config.admin.request.empty}") private String queryEmptyAdmin;
 
 //    @Value("${config.admin.request.fill}") private String queryFillAdmin;
@@ -69,7 +70,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-//        if (jdbcTemplate.queryForObject(queryEmptyAdmin, Integer.class) == 1) jdbcTemplate.update(queryFillAdmin, passwordEncoder().encode("b@8QINwE"));
+//        if (jdbcTemplate.queryForObject(queryEmptyAdmin, Integer.class) == 1) jdbcTemplate.update(queryFillAdmin, passwordEncoder().encode(testSeq));
         return httpSecurity
                 .csrf(
                         cfg -> cfg.ignoringAntMatchers("/api/0.0.1/open/**") )

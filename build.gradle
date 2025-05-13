@@ -5,7 +5,7 @@ plugins {
 }
 
 //description = ""
-group = 'ru.khtu.platform'
+group = 'ru.khtu'
 version = '0.0.0-001'
 
 //java {sourceCompatibility = JavaVersion.VERSION_1_8}
