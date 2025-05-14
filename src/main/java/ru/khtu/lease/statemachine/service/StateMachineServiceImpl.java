@@ -11,7 +11,7 @@ import ru.khtu.lease.common.data.enums.WorkObject;
 import ru.khtu.lease.common.data.model.WorkObjectModel;
 import ru.khtu.lease.common.util.dto.SpecIdAble;
 import ru.khtu.lease.common.util.dto.StateAble;
-import ru.khtu.lease.common.util.mapper.mapstruct.MapperDto;
+import ru.khtu.lease.common.util.mapstruct.MapperDto;
 import ru.khtu.lease.statemachine.data.dto.StateTransitionDto;
 import ru.khtu.lease.statemachine.data.dto.WoIdTempDto;
 import ru.khtu.lease.statemachine.data.enums.Action;

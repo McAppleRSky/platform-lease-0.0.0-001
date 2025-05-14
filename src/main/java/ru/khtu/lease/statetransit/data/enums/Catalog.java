@@ -13,7 +13,11 @@ public enum Catalog {
 
     CLASSIFICATION("Classification", "Classification"),
     LOCATION("Location", "Location"),
+    ORGANIZATION("Organization", "Organization"),
+    CONTRACT("Contract", "Contract"),
     PEOPLE("People", "People"),
+    SETUP("Setup", "Setup"),
+    INTERMEDIATE("Intermediate", "Intermediate"),
     ;
 
     private final String title, string;

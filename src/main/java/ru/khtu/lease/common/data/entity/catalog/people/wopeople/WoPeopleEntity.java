@@ -76,4 +76,7 @@ public class WoPeopleEntity implements EntityCreateAble, EntityStateAble {
     @Column(name="woPreviousStatusCL", length=150)
     public String woPreviousStatusCL;
 
+    @Column(name="woFormNameSY", length=150, nullable=false)
+    public String woFormNameSY;
+
 }

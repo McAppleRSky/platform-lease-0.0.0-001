@@ -1,4 +1,4 @@
-package ru.khtu.lease.common.util.mapper.mapstruct;
+package ru.khtu.lease.common.util.mapstruct;
 
 import java.util.List;
 

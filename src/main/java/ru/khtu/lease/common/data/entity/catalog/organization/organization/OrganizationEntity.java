@@ -1,4 +1,4 @@
-package ru.khtu.lease.common.data.entity.catalog.space.wospace;
+package ru.khtu.lease.common.data.entity.catalog.organization.organization;
 
 import lombok.*;
 
@@ -10,8 +10,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@Entity @Table(name="w_wospace")
-public class WoSpaceEntity {
+@Entity @Table(name="w_organization")
+public class OrganizationEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -40,11 +40,23 @@ public class WoSpaceEntity {
     @Column(name="woFormNameSY", length=150, nullable=false)
     private String woFormNameSY;
 
-    @Column(name="woAddressTX", length=1000, nullable=false)
-    private String woAddressTX;
+    @Column(name="woFullNameTX", length=150)
+    private String woFullNameTX;
 
-    @Column(name="woKnTX", length=26)
-    private String woKnTX;
+    @Column(name="woShortNameTX", length=50)
+    private String woShortNameTX;
+
+    @Column(name="woInnTX", length=11)
+    private String woInnTX;
+
+    @Column(name="woOkpoTX", length=9)
+    private String woOkpoTX;
+
+    @Column(name="woOgrnTX", length=14)
+    private String woOgrnTX;
+
+    @Column(name="woKppTX", length=10)
+    private String woKppTX;
 
     @Column(name="woCommentTX", length=400)
     private String woCommentTX;

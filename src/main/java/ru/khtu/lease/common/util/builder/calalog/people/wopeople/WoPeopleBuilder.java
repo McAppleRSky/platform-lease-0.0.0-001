@@ -26,6 +26,7 @@ public class WoPeopleBuilder{
     private String woPreviousStateSY;
     private String woStatusCL;
     private String woPreviousStatusCL;
+    private String woFormNameSY;
 
     public WoPeopleDto build() {
         return new WoPeopleDto(
@@ -45,7 +46,8 @@ public class WoPeopleBuilder{
                 this.woRecordStateSY,
                 this.woPreviousStateSY,
                 this.woStatusCL,
-                this.woPreviousStatusCL );
+                this.woPreviousStatusCL,
+                this.woFormNameSY );
     }
 
 }

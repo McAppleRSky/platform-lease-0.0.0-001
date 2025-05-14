@@ -11,7 +11,7 @@ import ru.khtu.lease.common.componentService.RetrieverService;
 import ru.khtu.lease.common.data.enums.WorkObject;
 import ru.khtu.lease.common.util.dto.SpecIdAble;
 import ru.khtu.lease.common.util.helper.ModelDtoHelper;
-import ru.khtu.lease.common.util.mapper.mapstruct.MapperDto;
+import ru.khtu.lease.common.util.mapstruct.MapperDto;
 import ru.khtu.lease.common.util.mapstruct.catalog.people.wopeople.WoPeopleMapperDto;
 import ru.khtu.lease.statemachine.data.enums.Action;
 import ru.khtu.lease.statemachine.data.enums.ProcessedStatus;

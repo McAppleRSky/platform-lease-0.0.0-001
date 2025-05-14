@@ -1,13 +1,11 @@
-package ru.khtu.lease.common.data.dto.catalog.space.wospace;
+package ru.khtu.lease.common.data.dto.catalog.organization.organization;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Column;
-
 @Getter
 @RequiredArgsConstructor
-public class WoSpaceDto {
+public class OrganizationDto {
 
     private final Long specId;
     private final String woIdTX;
@@ -17,8 +15,12 @@ public class WoSpaceDto {
     private final String woStatusCL;
     private final String woPreviousStatusCL;
     private final String woFormNameSY;
-    private final String woAddressTX;
-    private final String woKnTX;
+    private final String woFullNameTX;
+    private final String woShortNameTX;
+    private final String woInnTX;
+    private final String woOkpoTX;
+    private final String woOgrnTX;
+    private final String woKppTX;
     private final String woCommentTX;
     private final String woDescriptionTX;
 

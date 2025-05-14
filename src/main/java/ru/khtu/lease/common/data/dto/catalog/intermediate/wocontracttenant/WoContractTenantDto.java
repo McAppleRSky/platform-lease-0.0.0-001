@@ -1,13 +1,14 @@
-package ru.khtu.lease.common.data.dto.catalog.space.wospace;
+package ru.khtu.lease.common.data.dto.catalog.intermediate.wocontracttenant;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Column;
+import java.util.Date;
 
 @Getter
 @RequiredArgsConstructor
-public class WoSpaceDto {
+public class WoContractTenantDto {
 
     private final Long specId;
     private final String woIdTX;
@@ -17,8 +18,10 @@ public class WoSpaceDto {
     private final String woStatusCL;
     private final String woPreviousStatusCL;
     private final String woFormNameSY;
-    private final String woAddressTX;
-    private final String woKnTX;
+    private final Date woBeginDA;
+    private final Date woEndDA;
+    private final String woShortNameTX;
+    private final String woInnTX;
     private final String woCommentTX;
     private final String woDescriptionTX;
 

@@ -3,7 +3,7 @@ package ru.khtu.lease.common.componentSg.configuration;
 import org.apache.commons.lang3.NotImplementedException;
 import org.springframework.context.annotation.Bean;
 import ru.khtu.lease.common.data.enums.WorkObject;
-import ru.khtu.lease.common.util.mapper.mapstruct.MapperDto;
+import ru.khtu.lease.common.util.mapstruct.MapperDto;
 import ru.khtu.lease.common.util.mapstruct.catalog.people.wopeople.WoPeopleMapperDto;
 
 import java.util.HashMap;

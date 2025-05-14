@@ -26,5 +26,6 @@ public class WoPeopleDto implements SpecIdAble, StateAble {
     private final String woPreviousStateSY;
     private final String woStatusCL;
     private final String woPreviousStatusCL;
+    private final String woFormNameSY;
 
 }

@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import ru.khtu.lease.common.data.dto.catalog.people.wopeople.WoPeopleDto;
 import ru.khtu.lease.common.data.entity.catalog.people.wopeople.WoPeopleEntity;
-import ru.khtu.lease.common.util.mapper.mapstruct.MapperDto;
+import ru.khtu.lease.common.util.mapstruct.MapperDto;
 
 import java.util.List;
 

@@ -1,8 +1,10 @@
-package ru.khtu.lease.common.data.entity.catalog.space.wospace;
+package ru.khtu.lease.common.data.entity.catalog.contract.wocontract;
 
 import lombok.*;
 
 import javax.persistence.*;
+
+import java.sql.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -10,8 +12,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
-@Entity @Table(name="w_wospace")
-public class WoSpaceEntity {
+@Entity @Table(name="w_contract")
+public class WoContractEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -40,11 +42,11 @@ public class WoSpaceEntity {
     @Column(name="woFormNameSY", length=150, nullable=false)
     private String woFormNameSY;
 
-    @Column(name="woAddressTX", length=1000, nullable=false)
-    private String woAddressTX;
+    @Column(name="woBeginDA")
+    private Date woBeginDA;
 
-    @Column(name="woKnTX", length=26)
-    private String woKnTX;
+    @Column(name="woEndDA")
+    private Date woEndDA;
 
     @Column(name="woCommentTX", length=400)
     private String woCommentTX;

@@ -16,6 +16,7 @@ CREATE TABLE w_wopeople (
     woPreviousStateSY VARCHAR(100) NOT NULL,
     woStatusCL VARCHAR(150),
     woPreviousStatusCL VARCHAR(150),
+    woFormNameSY VARCHAR(150) NOT NULL,
     primary key (spec_id) );
 INSERT INTO s_state(wo_name, wo_state)
      VALUES ('woPeople', 'null'),
@@ -56,5 +57,5 @@ SELECT 'woPreviousStateSY', 'null', t.id_state_transit, s.id_statetransit_subact
   FROM s_state_transit t JOIN s_statetransit_subaction s ON t.id_state_transit = s.id_state_transit
  WHERE t.wo_name = 'woPeople' AND t.current_state = 'null' AND t.next_state = 'woDraft' AND t.action_name = 'woCreate';
 INSERT INTO w_wopeople (
-       woIdTX, woNameTX, woUserNameTX, woHomePageLI, woRecordStateSY, woPreviousStateSY)
-VALUES ('1', 'leaseAdmin', 'leaseAdmin', 'wo-leaseAdmin - portal', 'woActive', 'null');
+       woIdTX, woNameTX, woUserNameTX, woHomePageLI, woRecordStateSY, woPreviousStateSY, woFormNameSY)
+VALUES ('1', 'leaseAdmin', 'leaseAdmin', 'wo-leaseAdmin - portal', 'woActive', 'null', 'WoEmployee');
