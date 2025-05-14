@@ -4,9 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.khtu.lease.common.component.CreatorComponent;
 import ru.khtu.lease.common.component.model.WorkObjectModelCreatorComponent;
-import ru.khtu.lease.common.data.model.WorkObjectModel;
-import ru.khtu.lease.common.util.mapper.mapstruct.catalog.people.wopeople.WoPeopleMapperDto;
 import ru.khtu.lease.common.data.enums.WorkObject;
+import ru.khtu.lease.common.data.model.WorkObjectModel;
+import ru.khtu.lease.common.util.mapstruct.catalog.people.wopeople.WoPeopleMapperDto;
 
 @RequiredArgsConstructor
 @Component
@@ -17,8 +17,7 @@ public class WoPeopleCreatorComponentImpl implements CreatorComponent {
 
     @Override
     public WorkObjectModel createModel() {
-        return this.workObjectModelCreatorComponent
-                .create(WorkObject.WO_PEOPLE)
+        return this.workObjectModelCreatorComponent.create(WorkObject.WO_PEOPLE)
                 .put(mapperDto);
     }
 

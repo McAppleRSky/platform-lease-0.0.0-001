@@ -1,10 +1,10 @@
-package ru.khtu.lease.common.util.mapper.mapstruct.catalog.people.wopeople;
+package ru.khtu.lease.common.util.mapstruct.catalog.people.wopeople;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import ru.khtu.lease.common.data.dto.catalog.people.wopeople.WoPeopleDto;
 import ru.khtu.lease.common.data.entity.catalog.people.wopeople.WoPeopleEntity;
-import ru.khtu.lease.statemachine.util.mapper.mapstruct.MapperDto;
+import ru.khtu.lease.common.util.mapper.mapstruct.MapperDto;
 
 import java.util.List;
 

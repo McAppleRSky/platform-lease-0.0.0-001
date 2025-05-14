@@ -3,9 +3,9 @@ package ru.khtu.lease.common.component.model;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.NotImplementedException;
 import org.springframework.stereotype.Component;
-import ru.khtu.lease.common.data.model.WorkObjectModel;
-import ru.khtu.lease.common.service.StateMachineService;
+import ru.khtu.lease.common.componentService.StateMachineService;
 import ru.khtu.lease.common.data.enums.WorkObject;
+import ru.khtu.lease.common.data.model.WorkObjectModel;
 
 @Component
 @RequiredArgsConstructor

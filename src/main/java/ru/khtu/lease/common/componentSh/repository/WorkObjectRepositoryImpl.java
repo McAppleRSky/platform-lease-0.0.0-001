@@ -1,4 +1,4 @@
-package ru.khtu.lease.common.repository;
+package ru.khtu.lease.common.componentSh.repository;
 
 import org.springframework.stereotype.Repository;
 import ru.khtu.lease.statemachine.util.entity.EntityCreateAble;

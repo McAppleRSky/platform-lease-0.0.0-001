@@ -1,4 +1,4 @@
-package ru.khtu.lease.common.service;
+package ru.khtu.lease.common.componentService;
 
 import ru.khtu.lease.statetransit.data.entity.StateTransitionSubactionAttributeEntity;
 import ru.khtu.lease.statetransit.data.entity.StateTransitionSubactionEntity;

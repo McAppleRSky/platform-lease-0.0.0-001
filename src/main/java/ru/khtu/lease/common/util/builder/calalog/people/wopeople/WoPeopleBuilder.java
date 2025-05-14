@@ -7,7 +7,7 @@ import ru.khtu.lease.common.data.dto.catalog.people.wopeople.WoPeopleDto;
 
 @Getter @Setter
 @Accessors(chain = true)
-public class WoPeopleBuilder {
+public class WoPeopleBuilder{
 
     private Long specId;
     private String woIdTX;

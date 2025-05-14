@@ -2,9 +2,10 @@ package ru.khtu.lease.common.component;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import ru.khtu.lease.common.componentService.ActionProcessingService;
+import ru.khtu.lease.common.componentService.StateMachineSubActionService;
 import ru.khtu.lease.common.data.dto.StateMachineSubActionDto;
 import ru.khtu.lease.common.data.enums.WorkObject;
-import ru.khtu.lease.common.service.StateMachineSubActionService;
 import ru.khtu.lease.common.util.helper.StateTransitionSubActionAttributeHelper;
 import ru.khtu.lease.statemachine.data.dto.StateTransitionDto;
 import ru.khtu.lease.statemachine.data.exception.ActionNotCompleteException;
@@ -21,6 +22,7 @@ import java.util.List;
 public class StateMachineSubActionComponentImpl implements StateMachineSubActionComponent {
 
     private final StateMachineSubActionService stateMachineSubActionService;
+    private final ActionProcessingService actionProcessingService;
 
     @Override
     public void method(List<StateMachineSubActionDto> stateMachineSubActionDtos) throws ActionNotCompleteException {
@@ -52,9 +54,16 @@ public class StateMachineSubActionComponentImpl implements StateMachineSubAction
                     stateTransition.getStateTransitionSubaction().setStateTransitionSubActionAttribute(
                             StateTransitionSubActionAttributeHelper.toDtos(attributeEntities) );
                 }
+                if ( stateTransition.getStateTransitionSubaction() != null
+                     && stateTransition.getStateTransitionSubaction().getProcessName() != null
+                     && !stateTransition.getStateTransitionSubaction().getProcessName().isEmpty() ) {
+                    this.actionProcessingService.staticExecute(
+                            woType,
+                            specId,
+                            stateTransition.getStateTransitionSubaction().getProcessName() );
+                }
             }
         }
-        System.out.println();
     }
 
 }

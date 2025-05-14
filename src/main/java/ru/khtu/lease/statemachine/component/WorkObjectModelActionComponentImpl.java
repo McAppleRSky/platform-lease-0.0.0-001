@@ -3,10 +3,10 @@ package ru.khtu.lease.statemachine.component;
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.NotImplementedException;
 import org.springframework.stereotype.Component;
+import ru.khtu.lease.common.componentService.StateMachineService;
 import ru.khtu.lease.common.data.enums.WorkObject;
 import ru.khtu.lease.common.data.model.WorkObjectModel;
-import ru.khtu.lease.common.service.RetrieverService;
-import ru.khtu.lease.common.service.StateMachineService;
+import ru.khtu.lease.common.componentService.RetrieverService;
 
 @RequiredArgsConstructor
 @Component

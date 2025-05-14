@@ -9,6 +9,8 @@ import ru.khtu.lease.common.data.dto.catalog.space.wospace.WoSpaceDto;
 import ru.khtu.lease.common.data.entity.catalog.classification.woclassification.WoClassificationEntity;
 import ru.khtu.lease.common.data.entity.catalog.people.wopeople.WoPeopleEntity;
 import ru.khtu.lease.common.data.entity.catalog.space.wospace.WoSpaceEntity;
+import ru.khtu.lease.common.util.mapper.mapstruct.MapperDto;
+import ru.khtu.lease.common.util.mapstruct.catalog.people.wopeople.WoPeopleMapperDtoImpl;
 import ru.khtu.lease.statetransit.data.enums.Catalog;
 
 import java.util.EnumSet;
@@ -24,20 +26,43 @@ public enum WorkObject {
             new String("Classification"),
             new String("Classification"),
             WoClassificationEntity.class,
-            WoClassificationDto.class ),
+            WoClassificationDto.class, null),
     WO_SPACE(
             new String("Space"),
             new String("woSpace"),
             WoSpaceEntity.class,
-            WoSpaceDto.class ),
+            WoSpaceDto.class, null),
     WO_PEOPLE(
             new String("People"),
             new String("woPeople"),
             WoPeopleEntity.class,
-            WoPeopleDto.class );
+            WoPeopleDto.class, new WoPeopleMapperDtoImpl()) ;
 
     private final String title, string;
     private final Class<?> entityClass, dtoClass;
+    private final MapperDto mapperDto;
+
+/*
+    public MapperDto getMapper() {
+        return this.mapperDto;
+    }
+*/
+
+//    private static BeanFactory beanFactory;
+
+    /*public MapperDto getMapper() {
+        WoPeopleMapperDtoImpl bean;
+        if (beanFactory == null) {
+            throw new IllegalStateException("beanFactory == null");
+        }
+        switch (this) {
+            case WO_PEOPLE:
+//                BeanFactory beanFactory1 = beanFactory;
+                bean = beanFactory.getBean(WoPeopleMapperDtoImpl.class);
+                System.out.println();
+        }
+        throw new NotImplementedException();
+    }*/
 
     private static final Map<String, WorkObject> mapStrNameWorkObject = new HashMap<>();
 
@@ -46,7 +71,6 @@ public enum WorkObject {
             mapStrNameWorkObject.put(enumItem.getString(), enumItem);
         }
     }
-
     public static WorkObject get(String string) {
         for (String stringKey : mapStrNameWorkObject.keySet()) {
             if (stringKey.equalsIgnoreCase(string)) {
@@ -57,6 +81,7 @@ public enum WorkObject {
     }
 
     public static final Map<Catalog, EnumSet<WorkObject>> mapCatalogWorkObjectSet = new LinkedHashMap<>();
+
     private static final Map<String, WorkObject> mapStringWorkObject = new LinkedHashMap<>();
 
     static {
@@ -76,5 +101,4 @@ public enum WorkObject {
                 EnumSet.of(
                         WorkObject.WO_PEOPLE ) );
     }
-
 }

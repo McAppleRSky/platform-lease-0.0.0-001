@@ -1,20 +1,22 @@
 package ru.khtu.lease.common.data.model;
 
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.apache.commons.lang3.NotImplementedException;
+import ru.khtu.lease.common.componentService.StateMachineService;
 import ru.khtu.lease.common.data.dto.WoModelDto;
+import ru.khtu.lease.common.componentService.RetrieverService;
 import ru.khtu.lease.common.data.enums.WorkObject;
-import ru.khtu.lease.common.service.RetrieverService;
-import ru.khtu.lease.common.service.StateMachineService;
 import ru.khtu.lease.common.util.dto.SpecIdAble;
 import ru.khtu.lease.common.util.helper.ModelDtoHelper;
+import ru.khtu.lease.common.util.mapper.mapstruct.MapperDto;
+import ru.khtu.lease.common.util.mapstruct.catalog.people.wopeople.WoPeopleMapperDto;
 import ru.khtu.lease.statemachine.data.enums.Action;
 import ru.khtu.lease.statemachine.data.enums.ProcessedStatus;
 import ru.khtu.lease.statemachine.data.enums.State;
 import ru.khtu.lease.statemachine.util.entity.EntityCreateAble;
-import ru.khtu.lease.statemachine.util.mapper.mapstruct.MapperDto;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -44,8 +46,17 @@ public class WorkObjectModel {
         return this;
     }
 
-    public WorkObjectModel put(MapperDto mapperDto) {
+    public WorkObjectModel put(WoPeopleMapperDto mapperDto) {
         this._mapperDto = mapperDto;
+        return this;
+    }
+
+    public WorkObjectModel putMapperDto() {
+        if (this.type == null) {
+            throw new NotImplementedException("WorkObject type is null");
+        } else {
+            this._mapperDto = this.type.getMapperDto();
+        }
         return this;
     }
 
@@ -130,7 +141,7 @@ public class WorkObjectModel {
         return this;
     }
 
-    public WorkObjectModel retrieveRecordById(long id) {
+    public WorkObjectModel retrieveRecordById(@NonNull Long id) {
         this.workObject = Collections.singletonList(
                 new WoModelDto(
                         this._mapperDto.toDto(this._retrieverService.retrieveRecordById(this.type, id)) ) );
@@ -145,5 +156,4 @@ public class WorkObjectModel {
         this.workObject = ModelDtoHelper.dtosToModels(this._mapperDto.toDtos(entities));
         return this;
     }
-
 }

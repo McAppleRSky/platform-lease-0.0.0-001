@@ -1,4 +1,4 @@
-package ru.khtu.lease.common.config;
+package ru.khtu.lease.common.componentSg.configuration;
 
 import com.zaxxer.hikari.HikariDataSource;
 import org.springframework.beans.factory.annotation.Autowired;

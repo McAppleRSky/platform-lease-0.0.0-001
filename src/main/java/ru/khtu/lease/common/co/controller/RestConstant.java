@@ -1,4 +1,4 @@
-package ru.khtu.lease.common.controller;
+package ru.khtu.lease.common.co.controller;
 
 public interface RestConstant {
 

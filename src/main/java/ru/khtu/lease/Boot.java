@@ -32,7 +32,10 @@ public class Boot {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Boot.class);
+        /*ConfigurableApplicationContext context =*/ SpringApplication.run(Boot.class);
+//        ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+//        WorkObject.setBeanFactory(beanFactory);
+//        System.out.println();
     }
 
 }

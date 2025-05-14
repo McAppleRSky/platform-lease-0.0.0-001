@@ -1,4 +1,4 @@
-package ru.khtu.lease.common.repository;
+package ru.khtu.lease.common.componentSh.repository;
 
 import org.springframework.data.repository.Repository;
 import ru.khtu.lease.common.data.entity.StateEntity;

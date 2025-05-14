@@ -5,7 +5,7 @@ import org.apache.commons.lang3.NotImplementedException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.khtu.lease.common.controller.RestConstant;
+import ru.khtu.lease.common.co.controller.RestConstant;
 import ru.khtu.lease.common.data.enums.WorkObject;
 import ru.khtu.lease.statetransit.data.enums.Catalog;
 import ru.khtu.lease.statetransit.service.StateTransitService;

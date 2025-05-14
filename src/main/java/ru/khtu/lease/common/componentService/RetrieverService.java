@@ -1,4 +1,4 @@
-package ru.khtu.lease.common.service;
+package ru.khtu.lease.common.componentService;
 
 import ru.khtu.lease.common.data.enums.WorkObject;
 

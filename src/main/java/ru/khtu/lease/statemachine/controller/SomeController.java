@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.khtu.lease.common.controller.RestConstant;
+import ru.khtu.lease.common.co.controller.RestConstant;
 import ru.khtu.lease.statemachine.component.SomeComponent;
 import ru.khtu.lease.statemachine.data.enums.ProcessedStatus;
 import ru.khtu.lease.statemachine.data.plain.response.ActionBodyPlain;

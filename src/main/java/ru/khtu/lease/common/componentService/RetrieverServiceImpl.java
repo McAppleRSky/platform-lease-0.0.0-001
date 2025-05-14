@@ -1,10 +1,9 @@
-package ru.khtu.lease.common.service;
+package ru.khtu.lease.common.componentService;
 
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.khtu.lease.common.componentSh.repository.WorkObjectRepository;
 import ru.khtu.lease.common.data.enums.WorkObject;
-import ru.khtu.lease.common.repository.WorkObjectRepository;
 
 import javax.transaction.Transactional;
 

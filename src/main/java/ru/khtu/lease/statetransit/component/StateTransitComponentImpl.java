@@ -4,12 +4,12 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import ru.khtu.lease.common.componentSh.repository.StateRepository;
 import ru.khtu.lease.common.data.dto.StateDto;
 import ru.khtu.lease.common.data.enums.WorkObject;
 import ru.khtu.lease.statetransit.data.dto.StateTransitionFullDto;
 import ru.khtu.lease.statetransit.mapper.StateMapperDto;
 import ru.khtu.lease.statetransit.mapper.helper.StateTransitionMapperHelper;
-import ru.khtu.lease.common.repository.StateRepository;
 import ru.khtu.lease.statetransit.repository.StateTransitionRepository;
 
 import java.util.Collections;
