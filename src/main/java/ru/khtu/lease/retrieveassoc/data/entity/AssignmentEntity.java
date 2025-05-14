@@ -1,4 +1,4 @@
-package ru.khtu.lease.statetransit.data.entity;
+package ru.khtu.lease.retrieveassoc.data.entity;
 
 import lombok.Getter;
 import lombok.Setter;

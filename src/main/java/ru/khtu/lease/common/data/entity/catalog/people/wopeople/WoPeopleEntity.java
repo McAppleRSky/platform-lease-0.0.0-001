@@ -52,7 +52,8 @@ public class WoPeopleEntity implements EntityCreateAble, EntityStateAble {
 
 //    @Column(name="wPortalMenuLI", length=1000) private String wPortalMenuLI;
 
-//    @Column(name="wUserPassTX", length=700) private String wUserPassTX;
+    @Column(name="wUserPassTX", length=700)
+    private String woUserPassTX;
 
     @Column(name="woHomePageLI", length=1000)
     public String woHomePageLI;

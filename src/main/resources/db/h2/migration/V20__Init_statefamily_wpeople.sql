@@ -8,6 +8,7 @@ CREATE TABLE w_wopeople (
     woFamilyNameTX VARCHAR(150),
     woSurnameTX VARCHAR(150),
     woMenuLI VARCHAR(1000),
+    wUserPassTX VARCHAR(700),
     woHomePageLI VARCHAR(1000),
     woOrgNameTX VARCHAR(1000),
     woEmailTX VARCHAR(50),

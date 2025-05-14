@@ -3,7 +3,7 @@ package ru.khtu.lease.common.componentSg.configuration;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.khtu.lease.common.componentSi.workProcess.catalog.people.wopeople.WoPeopleSynchronousWhenCreate;
+import ru.khtu.lease.common.componentSi.workProcess.catalog.people.wopeople.WoPeopleSynchronousWhenCreateWorkprocessExecutableComponentImpl;
 import ru.khtu.lease.common.data.enums.WorkObject;
 import ru.khtu.lease.common.data.enums.WorkProcess;
 
@@ -19,7 +19,10 @@ public class ActionProcessingWorkObjectNameResolverConfiguration {
         Map<WorkProcess, Class<?>> woPeopleProcessResolver = new HashMap<>();
         Map<WorkObject, Map<WorkProcess, Class<?>>> workObjectToProcessResolverResult = new HashMap<>();
         workObjectToProcessResolverResult.put(WorkObject.WO_PEOPLE, woPeopleProcessResolver);
-        woPeopleProcessResolver.put(WorkProcess.get(new String("woPeople - Synchronous - when Create")), WoPeopleSynchronousWhenCreate.class);
+        woPeopleProcessResolver.put(
+                WorkProcess.get(
+                        new String("woPeople - Synchronous - when Create") ),
+                WoPeopleSynchronousWhenCreateWorkprocessExecutableComponentImpl.class );
         return workObjectToProcessResolverResult;
     }
 

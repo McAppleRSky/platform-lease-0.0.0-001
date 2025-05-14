@@ -18,6 +18,7 @@ public class WoPeopleDto implements SpecIdAble, StateAble {
     private final String woFamilyNameTX;
     private final String woSurnameTX;
     private final String woMenuLI;
+    private final String woUserPassTX;
     private final String woHomePageLI;
     private final String woOrgNameTX;
     private final String woEmailTX;

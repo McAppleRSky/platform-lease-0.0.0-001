@@ -18,6 +18,7 @@ public class WoPeopleBuilder{
     private String woFamilyNameTX;
     private String woSurnameTX;
     private String woMenuLI;
+    private String woUserPassTX;
     private String woHomePageLI;
     private String woOrgNameTX;
     private String woEmailTX;
@@ -37,6 +38,7 @@ public class WoPeopleBuilder{
                 this.woFamilyNameTX,
                 this.woSurnameTX,
                 this.woMenuLI,
+                this.woUserPassTX,
                 this.woHomePageLI,
                 this.woOrgNameTX,
                 this.woEmailTX,
