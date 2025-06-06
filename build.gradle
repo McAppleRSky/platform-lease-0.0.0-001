@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '2.7.18'
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id "jacoco"
 }
 
 //description = ""
@@ -48,3 +49,16 @@ test {
 	useJUnitPlatform()
 	systemProperty "random.testing.seed", new Random().nextInt()
 }
+
+/*tasks.jacocoTestReport {
+	reports {
+		csv.required.set(true)
+		html.required.set(true)
+		xml.required.set(true)
+		csv.outputLocation.set(reporting.baseDirectory.file("test-coverage/jacoco.csv"))
+		html.outputLocation.set(reporting.baseDirectory.dir("test-coverage/jacoco/html"))
+		xml.outputLocation.set(reporting.baseDirectory.file("test-coverage/jacoco.xml"))
+	}
+}*/
+
+
