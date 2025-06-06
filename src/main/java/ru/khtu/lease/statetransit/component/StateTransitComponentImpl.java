@@ -22,7 +22,6 @@ import java.util.Map;
 public class StateTransitComponentImpl implements StateTransitComponent {
 
     private final StateRepository stateRepository;
-//    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Qualifier("statetransit")
     private final StateMapperDto stateMapper;
     private final StateTransitionRepository stateTransitionRepository;

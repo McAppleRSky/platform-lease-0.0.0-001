@@ -33,6 +33,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
+//	implementation "com.maciejwalkowiak.spring:spring-boot-startup-report:0.2.0"
 	implementation files('lib/h2-2.2.224.jar')
 //	implementation "org.postgresql:postgresql"
 	implementation "org.flywaydb:flyway-core:9.22.3"

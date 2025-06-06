@@ -3,7 +3,6 @@ package ru.khtu.lease.common.data.dto.catalog.intermediate.wocontracttenant;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Column;
 import java.util.Date;
 
 @Getter

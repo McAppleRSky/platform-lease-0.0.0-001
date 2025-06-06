@@ -17,8 +17,6 @@ public class StateTransitServiceImpl implements StateTransitService {
     private final StateTransitComponent stateTransitComponent;
     private final StateTransitionMapperHelperDto stateTransitionMapperHelperDto;
     private final StateTransitionSubactionMapperHelperDto stateTransitionSubactionMapperHelperDto;
-//    private final StateTransitSubactionInclusionMapperDto stateTransitSubactionInclusionMapperDto;
-//    private final StateTransitSubactionAttributeMapperDto stateTransitSubactionAttributeMapperDto;
 
     @Override
     public Map<String, Object> getStateTransition(WorkObject workObject) {

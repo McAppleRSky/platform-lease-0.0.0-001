@@ -16,15 +16,23 @@ import java.util.Collection;
 public class Boot {
 
     @GetMapping("/")
-    public String index(){
+    public String index() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User principal = (User)auth.getPrincipal();
         String username = principal.getUsername();
         Object credentials = auth.getCredentials();
         Collection<? extends GrantedAuthority> authorities = auth.getAuthorities();
         Object details = auth.getDetails();
-        return "index";
+        return new String("index");
     }
+    /*@GetMapping("/{static_webpage}")
+    public ModelAndView getWeb(@PathVariable("static_webpage") String static_webpage) {
+        ModelAndView modelAndView = new ModelAndView();
+        if (new String("favicon.ico").equalsIgnoreCase(static_webpage)) {
+        }
+//        modelAndView.setViewName("webpages/" + static_webpage);
+        return modelAndView;
+    }*/
 
     @GetMapping("/login")
     public String login() {
