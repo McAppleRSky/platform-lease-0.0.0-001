@@ -1,7 +1,9 @@
 package ru.khtu.lease;
 
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,7 +11,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.Collection;
+import java.util.*;
 
 @Controller
 @SpringBootApplication
@@ -40,10 +42,24 @@ public class Boot {
     }
 
     public static void main(String[] args) {
-        /*ConfigurableApplicationContext context =*/ SpringApplication.run(Boot.class);
-//        ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
+        ConfigurableApplicationContext context = SpringApplication.run(Boot.class);
+        ConfigurableListableBeanFactory beanFactory = context.getBeanFactory();
 //        WorkObject.setBeanFactory(beanFactory);
-//        System.out.println();
+        String[] beanDefinitionNames = beanFactory.getBeanDefinitionNames();
+//        Map<String, Object> beans = new HashMap<>();
+        List beanList = new ArrayList<>();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            if (beanFactory.getBean(beanDefinitionName).getClass().getCanonicalName() != null) {
+                if ( beanFactory.getBean(beanDefinitionName).getClass().getCanonicalName().startsWith("ru.khtu") ) {
+//                    beans.put(beanFactory.getBean(beanDefinitionName).getClass().getCanonicalName(), beanDefinitionName);
+                    beanList.add(beanFactory.getBean(beanDefinitionName).getClass().getCanonicalName());
+                }
+            }
+        }
+        String[] beans = new String[beanList.size()];
+        beanList.toArray(beans);
+        Arrays.sort(beans);
+        System.out.println();
     }
 
 }

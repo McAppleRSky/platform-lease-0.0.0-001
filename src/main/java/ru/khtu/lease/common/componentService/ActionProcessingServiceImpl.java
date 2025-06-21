@@ -16,16 +16,16 @@ import java.util.Map;
 @Service
 public class ActionProcessingServiceImpl implements ActionProcessingService {
 
-    private final BeanFactory benFactory;
+    private final BeanFactory beanFactory;
     private final RetrieverService retrieverService;
 
     //    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     private Map<WorkObject, Map<WorkProcess, Class<?>>> getWorkObjectToProcessResolver() {
         final String getWorkObjectToProcessResolver = new String("getWorkObjectToProcessResolver");
-        if (!this.benFactory.containsBean(getWorkObjectToProcessResolver)) {
+        if (!this.beanFactory.containsBean(getWorkObjectToProcessResolver)) {
             throw new IllegalArgumentException(new String("Problem ") + getWorkObjectToProcessResolver);
         }
-        return  (Map<WorkObject, Map<WorkProcess, Class<?>>>) this.benFactory.getBean(getWorkObjectToProcessResolver);
+        return  (Map<WorkObject, Map<WorkProcess, Class<?>>>) this.beanFactory.getBean(getWorkObjectToProcessResolver);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ActionProcessingServiceImpl implements ActionProcessingService {
         Map<WorkObject, Map<WorkProcess, Class<?>>> workObjectToProcessResolver = getWorkObjectToProcessResolver();
         Map<WorkProcess, Class<?>> workProcessClassMap = workObjectToProcessResolver.get(type);
         Class<?> aClass = workProcessClassMap.get(WorkProcess.get(processName));
-        WorkprocessExecutableComponent woExecuteAble = (WorkprocessExecutableComponent) benFactory.getBean(aClass);
+        WorkprocessExecutableComponent woExecuteAble = (WorkprocessExecutableComponent) beanFactory.getBean(aClass);
         if (woExecuteAble == null) {
             throw new ActionNotCompleteException(new String("Problem ") + processName);
         }
